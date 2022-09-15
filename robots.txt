@@ -1,0 +1,60 @@
+Sitemap: https://getvirtualcard.co.uk/sitemap.xml
+
+User-Agent: *
+Disallow: /admin/
+Disallow: /user-password/
+
+Disallow: /cgi-bin/
+Disallow: /page/
+Disallow: /blog/page/*
+Disallow: /amp/page/*
+Disallow: /dgd_scrollbox/
+Disallow: /?s=*
+Disallow: /go/
+Disallow: /recommended/
+Disallow: /comments/feed/
+Disallow: /trackback/
+Disallow: /index.php
+Disallow: /xmlrpc.php
+Disallow: ?comments=*
+Disallow: /search?
+Disallow: /?p=*
+Disallow: *?replytocom
+Disallow: */trackback 
+Disallow: */feed 
+Disallow: */comments 
+Disallow: /tag/
+Disallow: /author/
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: SemrushBot-SA
+Disallow: /
+
+user-agent: AhrefsBot
+disallow: /
+
+User-agent: NinjaBot
+Allow: /
+
+User-agent: Mediapartners-Google*
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /wp-content/uploads/
+
+User-agent: Adsbot-Google
+Allow: /
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: HTTrack
+Disallow: /
+
+User-agent: Mozilla/5.0 (compatible; Ezooms/1.0; ezooms.bot@gmail.com)
+Disallow: /

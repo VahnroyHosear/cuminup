@@ -43,8 +43,29 @@ class FrontendController extends Controller
     {
         //die('fghfg');
         $set=Settings::first();
-        //$data['title'] = $set->title;
+        $data['set'] = $set;
         $data['title'] = "Home";
+        $data['item'] = array();
+        $data['brand'] = array();
+        $data['blog'] = array();
+        $data['review'] = array();
+        $data['social'] = array();
+        $data['pages'] = array();
+        $data['faq'] = array();
+        $data['logo'] =(object)  array('image_link2'=>'image_link2',
+										'image_link'=>'image_link',
+										'dark'=>'dark',
+										);
+        $data['ui'] = (object) array('header_title'=>'header_title',
+										'header_body'=>'header_body',
+										's4_image'=>'s4_image',
+										's3_image'=>'s3_image',
+										's3_title'=>'s3_title',
+										's3_body'=>'s3_body',
+										's6_title'=>'s6_title',
+										's6_body'=>'s6_body',
+										's2_image'=>'s2_image',
+										);
         //dd($set);
         return view('front.index', $data);
     }

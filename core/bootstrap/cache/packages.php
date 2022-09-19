@@ -1,31 +1,13 @@
 <?php return array (
-  'anhskohbo/no-captcha' => 
+  'facade/ignition' => 
   array (
     'providers' => 
     array (
-      0 => 'Anhskohbo\\NoCaptcha\\NoCaptchaServiceProvider',
+      0 => 'Facade\\Ignition\\IgnitionServiceProvider',
     ),
     'aliases' => 
     array (
-      'NoCaptcha' => 'Anhskohbo\\NoCaptcha\\Facades\\NoCaptcha',
-    ),
-  ),
-  'barryvdh/laravel-dompdf' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Barryvdh\\DomPDF\\ServiceProvider',
-    ),
-    'aliases' => 
-    array (
-      'PDF' => 'Barryvdh\\DomPDF\\Facade',
-    ),
-  ),
-  'beyondcode/laravel-dump-server' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'BeyondCode\\DumpServer\\DumpServerServiceProvider',
+      'Flare' => 'Facade\\Ignition\\Facades\\Flare',
     ),
   ),
   'fideloper/proxy' => 
@@ -35,15 +17,25 @@
       0 => 'Fideloper\\Proxy\\TrustedProxyServiceProvider',
     ),
   ),
-  'intervention/image' => 
+  'fruitcake/laravel-cors' => 
   array (
     'providers' => 
     array (
-      0 => 'Intervention\\Image\\ImageServiceProvider',
+      0 => 'Fruitcake\\Cors\\CorsServiceProvider',
     ),
-    'aliases' => 
+  ),
+  'laravel/sail' => 
+  array (
+    'providers' => 
     array (
-      'Image' => 'Intervention\\Image\\Facades\\Image',
+      0 => 'Laravel\\Sail\\SailServiceProvider',
+    ),
+  ),
+  'laravel/sanctum' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Laravel\\Sanctum\\SanctumServiceProvider',
     ),
   ),
   'laravel/tinker' => 
@@ -53,15 +45,11 @@
       0 => 'Laravel\\Tinker\\TinkerServiceProvider',
     ),
   ),
-  'mews/purifier' => 
+  'laravel/ui' => 
   array (
     'providers' => 
     array (
-      0 => 'Mews\\Purifier\\PurifierServiceProvider',
-    ),
-    'aliases' => 
-    array (
-      'Purifier' => 'Mews\\Purifier\\Facades\\Purifier',
+      0 => 'Laravel\\Ui\\UiServiceProvider',
     ),
   ),
   'nesbot/carbon' => 
@@ -76,17 +64,6 @@
     'providers' => 
     array (
       0 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
-    ),
-  ),
-  'realrashid/sweet-alert' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'RealRashid\\SweetAlert\\SweetAlertServiceProvider',
-    ),
-    'aliases' => 
-    array (
-      'Alert' => 'RealRashid\\SweetAlert\\Facades\\Alert',
     ),
   ),
 );

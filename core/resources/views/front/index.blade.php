@@ -106,10 +106,10 @@
 <!--            <path d="M0,0 C16.6666667,66 33.3333333,99 50,99 C66.6666667,99 83.3333333,66 100,0 L100,100 L0,100 L0,0 Z"></path>-->
 <!--        </svg>-->
 <!--    </div>-->
-<!--    <div class="container">-->
+<!--    <div class="container">--> 
 <!--        <div class="row full-screen align-items-center p-50px-tb lg-p-100px-t justify-content-center">-->
 <!--            <div class="col-lg-6 m-50px-tb md-m-20px-t">-->
-<!--                <h6 class="typed theme3rd-bg p-5px-tb p-15px-lr d-inline-block white-color border-radius-15 m-25px-b" data-elements="{{$set->title}}"></h6>-->
+<!--                <h6 class="typed theme3rd-bg p-5px-t	b p-15px-lr d-inline-block white-color border-radius-15 m-25px-b" data-elements="{{$set->title}}"></h6>-->
 <!--                <h1 class="display-4 m-20px-b">{{$ui->header_title}}</h1>-->
 <!--                <p class="font-2">{{$ui->header_body}}</p>-->
 <!--                <div class="p-20px-t">-->
@@ -143,9 +143,9 @@
             <div class="col-lg-6 m-50px-tb md-m-20px-t">
                 <h6 class="typed theme3rd-bg p-5px-tb p-15px-lr d-inline-block white-color border-radius-15 m-25px-b" data-elements="Your business | Personal use | GooglePay | ApplePay
 Facebook| Amazon | Online Ads | Gifts Card | Shopping & much more"></h6>
-                <h1 class="display-4 m-20px-b" style="color:white!important;font-size: 46px;">{{$ui->header_title}}</h1>
+                <!--h1 class="display-4 m-20px-b" style="color:white!important;font-size: 46px;">{{$ui->header_title}}</h1-->
                 <!--<h1 class="display-4 m-20px-b" style="color:white!important;font-size: 46px;">Simplify Your Online Businesses</h1>-->
-                <p class="font-2" style="color: white;">{{$ui->header_body}}</p>
+                <!--p class="font-2" style="color: white;">{{$ui->header_body}}</p-->
                 <div class="p-20px-t">
                     <a class="m-btn m-btn-radius m-btn-theme" href="https://cuminup.com/register">
                         <span class="m-btn-inner-text">{{__('Get Started')}}</span>
@@ -199,11 +199,11 @@ Facebook| Amazon | Online Ads | Gifts Card | Shopping & much more"></h6>
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 m-15px-tb text-center">
-                <img src="{{url('/')}}/asset/images/{{$ui->s3_image}}" title="" alt="">
+                <!--img src="{{url('/')}}/asset/images/{{$ui->s3_image}}" title="" alt=""-->
             </div>
             <div class="col-lg-6 m-15px-tb">
-                <h3 class="h1">{{$ui->s3_title}}</h3>
-                <p class="font-2 p-0px-t">{{$ui->s3_body}}</p>
+                <!--h3 class="h1">{{$ui->s3_title}}</h3>
+                <p class="font-2 p-0px-t">{{$ui->s3_body}}</p-->
                 <div class="border-left-2 border-color-theme p-25px-l m-35px-t">
                     <h6 class="font-2">{{$set->title}}</h6>
                     <p>{{__('Stimulate your sales with modular payment solutions and loyalty programs!')}}</p>
@@ -795,10 +795,10 @@ Use CuminUp ACH to make and accept payments.</p>
     <div class="container">
         <div class="row justify-content-between">
             <div class="col-lg-6">
-                <img src="{{url('/')}}/asset/images/{{$ui->s7_image}}" title="" alt="">
+                <!--img src="{{url('/')}}/asset/images/{{$ui->s7_image}}" title="" alt=""-->
             </div>
             <div class="col-lg-5 m-30px-b m-30px-t">
-                <h3 class="h3 m-30px-b">{{$ui->s7_title}}</h3>
+                <!--h3 class="h3 m-30px-b">{{$ui->s7_title}}</h3-->
                 <div class="owl-carousel owl-nav-arrow-bottom white-bg box-shadow-lg p5" data-items="1" data-nav-arrow="true" data-nav-dots="false" data-md-items="1" data-sm-items="1" data-xs-items="1" data-xx-items="1" data-space="0" data-autoplay="true">
                     @foreach($review as $vreview)
                     <div class="p-25px m-20px-b">

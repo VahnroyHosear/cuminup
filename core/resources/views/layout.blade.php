@@ -323,7 +323,7 @@ s0.parentNode.insertBefore(s1,s0);
         <script defer src="{{url('/')}}/asset/static/plugin/bootstrap/js/popper.min.js"></script>
         <script defer src="{{url('/')}}/asset/static/plugin/bootstrap/js/bootstrap.js"></script>
         <script defer src="{{url('/')}}/asset/static/js/custom.js"></script>
-@include('sweetalert::alert')
+
 @yield('script')
 @if (session('success'))
     <script>

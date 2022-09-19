@@ -1,11 +1,11 @@
 <?php
 
-$request_headers        = apache_request_headers();
-$http_origin            = @$request_headers['Origin'];
-$allowed_http_origins   = array(
+//$request_headers        = apache_request_headers();
+//$http_origin            = @$request_headers['Origin'];
+/*$allowed_http_origins   = array(
                             "https://www.cuminup.com/vcard/",
                             "https://www.cuminup.com/vcard/"
-                          );
+                          );*/
 /*if (in_array($http_origin, $allowed_http_origins)){ 
 header('Access-Control-Allow-Origin:'.$http_origin);
 } */

@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => (bool) env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => 'https://www.cuminup.com/',// env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://localhost'),
 
     'asset_url' => env('ASSET_URL', null),
 
@@ -67,10 +67,7 @@ return [
     |
     */
 
-        //$time = strtotime($utc .' UTC');
-        //$dateInLocal = date("Y-m-d H:i:s", strtotime($utc .' UTC'));
-        //echo $dateInLocal;
-    'timezone' => 'Asia/Kolkata',
+    'timezone' => 'UTC',
 
     /*
     |--------------------------------------------------------------------------
@@ -122,39 +119,10 @@ return [
     |
     */
 
-    'key' => 'base64:YsWeTim2Ncbbv+qiL+xQ67Wrp1UXqhJXirQjfcjxMc8=',//env('APP_KEY'),
+    'key' => env('APP_KEY'),
 
     'cipher' => 'AES-256-CBC',
-    
-    /*
-    |--------------------------------------------------------------------------
-    | PRIVACY.COM VIRTUAL CRAD API CREDENTIALS
-    |--------------------------------------------------------------------------
-    |
-    | This key is used by the Illuminate encrypter service and should be set
-    | to a random, 32 character string, otherwise these encrypted strings
-    | will not be safe. Please do this before deploying an application!
-    |
-    */
-    
-    //SANDBOX DETAILS
-    'PRIVACY_API_KEY' => '78e4cfa4-c440-4d9e-9440-a3c91526b3eb',
-    'PRIVACY_API_URL' => 'https://sandbox.lithic.com/v1',//'https://sandbox.privacy.com/v1',
-     
-    
-     
-    //PRODUCTION DETAILS
-    // 'PRIVACY_API_KEY' => '1351463c-0c09-45e8-91e5-797cc07daded',//PRODUCTION KEY
-    // 'PRIVACY_API_URL' => 'https://api.privacy.com/v1',//'https://api.lithic.com/v1',//'https://api.privacy.com/v1',//PRODUCTION URL
-    
-    
-    
-    //BLOCKSCORE DETAILS
-    'BLOCKSCORE_KEY' => 'sandbox_key_b10deb370809cdb708ae59e82fdeffb7',
-    'BLOCKSCORE_SECRET' => 'sandbox_secret_958a4037dca86bdace2414e0ccc8256977cf3750a72c7147b43ba4b3f4730824',
-    'BLOCKSCORE_API_URL' => 'https://api.blockscore.com', 
-    
-    
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
@@ -193,9 +161,6 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        App\Providers\HelperServicerProvider::class,
-        Mews\Purifier\PurifierServiceProvider::class,
-        
 
         /*
          * Package Service Providers...
@@ -209,8 +174,6 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        RealRashid\SweetAlert\SweetAlertServiceProvider::class,
-        Barryvdh\DomPDF\ServiceProvider::class,
 
     ],
 
@@ -238,20 +201,24 @@ return [
         'Config' => Illuminate\Support\Facades\Config::class,
         'Cookie' => Illuminate\Support\Facades\Cookie::class,
         'Crypt' => Illuminate\Support\Facades\Crypt::class,
+        'Date' => Illuminate\Support\Facades\Date::class,
         'DB' => Illuminate\Support\Facades\DB::class,
         'Eloquent' => Illuminate\Database\Eloquent\Model::class,
         'Event' => Illuminate\Support\Facades\Event::class,
         'File' => Illuminate\Support\Facades\File::class,
         'Gate' => Illuminate\Support\Facades\Gate::class,
         'Hash' => Illuminate\Support\Facades\Hash::class,
+        'Http' => Illuminate\Support\Facades\Http::class,
+        'Js' => Illuminate\Support\Js::class,
         'Lang' => Illuminate\Support\Facades\Lang::class,
         'Log' => Illuminate\Support\Facades\Log::class,
         'Mail' => Illuminate\Support\Facades\Mail::class,
         'Notification' => Illuminate\Support\Facades\Notification::class,
         'Password' => Illuminate\Support\Facades\Password::class,
         'Queue' => Illuminate\Support\Facades\Queue::class,
+        'RateLimiter' => Illuminate\Support\Facades\RateLimiter::class,
         'Redirect' => Illuminate\Support\Facades\Redirect::class,
-        'Redis' => Illuminate\Support\Facades\Redis::class,
+        // 'Redis' => Illuminate\Support\Facades\Redis::class,
         'Request' => Illuminate\Support\Facades\Request::class,
         'Response' => Illuminate\Support\Facades\Response::class,
         'Route' => Illuminate\Support\Facades\Route::class,
@@ -262,10 +229,6 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Helper' => App\Helpers\Helper::class,
-        'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
-        'Purifier' => Mews\Purifier\Facades\Purifier::class,
-        'PDF' => Barryvdh\DomPDF\Facade::class,
 
     ],
 

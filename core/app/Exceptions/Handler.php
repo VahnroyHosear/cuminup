@@ -2,17 +2,18 @@
 
 namespace App\Exceptions;
 
-use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\Debug\Exception\FatalThrowableError;
 use Illuminate\Auth\AuthenticationException;
-use Auth; 
+use Throwable;
 
 class Handler extends ExceptionHandler
 {
     /**
      * A list of the exception types that are not reported.
      *
-     * @var array
+     * @var string[]
      */
     protected $dontReport = [
         //
@@ -21,47 +22,67 @@ class Handler extends ExceptionHandler
     /**
      * A list of the inputs that are never flashed for validation exceptions.
      *
-     * @var array
+     * @var string[]
      */
     protected $dontFlash = [
+        'current_password',
         'password',
         'password_confirmation',
     ];
 
     /**
-     * Report or log an exception.
+     * Register the exception handling callbacks for the application.
      *
-     * @param  \Exception  $exception
      * @return void
      */
-    public function report(Exception $exception)
+    public function register()
     {
-        parent::report($exception);
+
+        $this->reportable(function (Exception $e) {
+            $response = [
+            'success'     => false,
+            'status_code' => (int)$e->getStatusCode(),
+            'message'     => $e->getMessage(),
+        ];
+          return response()->json($response, $e->getStatusCode());
+        });
+
     }
 
-    /**
-     * Render an exception into an HTTP response.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Exception  $exception
-     * @return \Illuminate\Http\Response
-     */
-    public function render($request, Exception $exception)
-    {
-        return parent::render($request, $exception);
-    }
 
     protected function unauthenticated($request, AuthenticationException $exception)
     {
         if ($request->expectsJson()) {
-            return response()->json(['error' => 'Unauthenticated.'], 401);
-        } 
-        if ($request->is('admin') || $request->is('admin/*')) {
-            return redirect()->guest('/admin');
+                $error      = "User is unauthorized";
+                $error_code = (int)401;
+                $response   = [
+                 'success'     => false,
+                 'status_code' => $error_code,
+                 'message'     => $error,
+                ];
+                return response()->json($response, $error_code);
         }
-        if ($request->is('user') || $request->is('user/*')) {
-            return redirect()->guest('/login');
-        }
-        return redirect()->guest(route('login'));
+        return redirect()->guest(route($login));
     }
+
+    protected function fatal($request, FatalThrowableError $exception)
+    {
+        if ($request->expectsJson()) {
+                $error      = $exception->getMessage();
+                $error_code = (int)401;
+                $response   = [
+                 'success'     => false,
+                 'status_code' => $error_code,
+                 'message'     => $error,
+                ];
+                return response()->json($response, $error_code);
+        }
+        return redirect()->guest(route($login));
+    }
+     
+
+
+
+  
+
 }

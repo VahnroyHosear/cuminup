@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\FrontendController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
